@@ -1,4 +1,4 @@
-# File_To_CSV
+# File_to_CSV
 파일을 CSV로 만들어주는 모듈
 
 ## 1. Download and Create "rawdata" folder , "csvdata" folder

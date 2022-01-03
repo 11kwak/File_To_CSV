@@ -8,6 +8,8 @@ class Tocsv:
         self.csv_name = csv_name
         self.exceltocsv = self.exceltocsv()
         self.txttocsv = self.txttocsv()
+        self.csvtocsv = self.csvtocsv()
+
 
         
     def tocsv(self):
@@ -27,12 +29,23 @@ class Tocsv:
                 test_df.to_csv("csvdata/{0}".format(csv_name),header=False,index=False,encoding="cp949")
                 self.txttocsv
 
+            elif src[1] == ".csv":
+                test_df = pd.read_csv("rawdata/{0}".format(name), encoding='cp949')
+                test_df.to_csv("csvdata/{0}".format(csv_name),header=False,index=False,encoding='cp949')
+                self.txttocsv
+
+            else:
+                print("Only xlsx, txt, csv file plz")
+
 
     def exceltocsv(self):
         print("엑셀을 csv로 만듭니다.")
 
     def txttocsv(self):
         print("txt파일을 csv로 만듭니다.")
+
+    def csvtocsv(self):
+        print("csv파일을 csv로 만듭니다.")
         
 
         

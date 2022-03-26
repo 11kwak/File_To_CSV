@@ -22,6 +22,11 @@ class Tocsv:
                 test_df = pd.read_excel("rawdata/{0}".format(name))
                 test_df.to_csv("csvdata/{0}".format(csv_name),header=False,index=False,encoding="cp949")
                 self.exceltocsv
+
+            elif src[1] == ".xls":
+                test_df = pd.read_excel("rawdata/{0}".format(name))
+                test_df.to_csv("csvdata/{0}".format(csv_name),header=False,index=False,encoding="cp949")
+                self.exceltocsv
                 
 
             elif src[1] == ".TXT":
@@ -30,7 +35,7 @@ class Tocsv:
                 self.txttocsv
 
             elif src[1] == ".csv":
-                test_df = pd.read_csv("rawdata/{0}".format(name), encoding='cp949')
+                test_df = pd.read_csv("rawdata/{0}".format(name), encoding='utf-8')
                 test_df.to_csv("csvdata/{0}".format(csv_name),header=False,index=False,encoding='cp949')
                 self.txttocsv
 
